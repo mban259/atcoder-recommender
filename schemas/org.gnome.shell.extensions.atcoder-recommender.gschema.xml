@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="org.gnome.shell.extensions.atcoder-recommender"
+          path="/org/gnome/shell/extensions/atcoder-recommender/">
+    <key name="username" type="s">
+      <default>""</default>
+      <summary>AtCoder Username</summary>
+      <description>
+        The AtCoder username used to fetch submissions and recommend problems.
+      </description>
+    </key>
+    <key name="exclude-filter" type="i">
+      <default>0
+      </default>
+      <summary>Exclusion Filter</summary>
+      <description>
+        Index of the exclusion filter for solved problems in recommendations.
+      </description>
+    </key>
+  </schema>
+</schemalist>
