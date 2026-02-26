@@ -73,9 +73,30 @@ const AtCoderIndicator = GObject.registerClass(
         _initializeState() {
             const username = this._settings.get_string('username');
             if (username) {
-                this._fetchRecommendation();
+                this._loadSavedProblem();
             } else {
                 this._updateDisplay(IconState.NO_USERNAME);
+            }
+        }
+
+        _loadSavedProblem() {
+            const saved = this._settings.get_string('current-problem');
+            if (saved) {
+                try {
+                    this._currentProblem = JSON.parse(saved);
+                    this._updateDisplay(IconState.READY);
+                    this._buildMenu();
+                } catch (e) {
+                    log(`Failed to load saved problem: ${e}`);
+                }
+            }
+        }
+
+        _saveProblem() {
+            if (this._currentProblem) {
+                this._settings.set_string('current-problem', JSON.stringify(this._currentProblem));
+            } else {
+                this._settings.set_string('current-problem', '');
             }
         }
 
@@ -286,6 +307,7 @@ const AtCoderIndicator = GObject.registerClass(
                     this._updateDisplay(IconState.IDLE);
                 }
 
+                this._saveProblem();
                 this._buildMenu();
             } catch (e) {
                 log(`Error: ${e}`);

@@ -17,5 +17,12 @@
         Index of the exclusion filter for solved problems in recommendations.
       </description>
     </key>
+    <key name="current-problem" type="s">
+      <default>""</default>
+      <summary>Current Problem</summary>
+      <description>
+        JSON string of the current recommended problem.
+      </description>
+    </key>
   </schema>
 </schemalist>
