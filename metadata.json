@@ -2,6 +2,7 @@
   "name": "AtCoder Recommender",
   "description": "A GNOME Shell extension that shows a personalized recommended AtCoder problem based on your username and lets you open it instantly from the top panel.",
   "uuid": "atcoder-recommender@proton.me",
+  "url": "https://github.com/mban259/atcoder-recommender",
   "settings-schema": "org.gnome.shell.extensions.atcoder-recommender",
   "shell-version": [
     "49"
